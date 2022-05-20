@@ -14,6 +14,9 @@ import MyAppionment from "./pages/Deashboard/MyAppionment";
 import Myreview from "./pages/Deashboard/Myreview";
 import User from "./pages/Deashboard/User";
 import RequireAdmin from "./pages/Login/RequireAdmin";
+import AddDoctor from "./pages/Deashboard/AddDoctor";
+import ManageDoctor from "./pages/Deashboard/ManageDoctor";
+import Payment from "./pages/Deashboard/Payment";
 
 function App() {
   return (
@@ -43,6 +46,7 @@ function App() {
         >
           <Route index element={<MyAppionment></MyAppionment>}></Route>
           <Route path="myreview" element={<Myreview></Myreview>}></Route>
+
           <Route
             path="user"
             element={
@@ -51,8 +55,25 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route
+            path="adddoctor"
+            element={
+              <RequireAdmin>
+                <AddDoctor></AddDoctor>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="managedoctor"
+            element={
+              <RequireAdmin>
+                <ManageDoctor></ManageDoctor>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
         </Route>
-        {/* <Route path="/myreview" element={<Myreview></Myreview>}></Route> */}
+
         <Route path="/" element></Route>
         <Route path="/" element></Route>
       </Routes>

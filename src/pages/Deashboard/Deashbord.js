@@ -24,7 +24,13 @@ const Deashbord = () => {
           </li>
           <li>
             <Link to="/deashbord/myreview">My Review </Link>
-            {admin && <Link to="/deashbord/user">All Users </Link>}
+            {admin && (
+              <>
+                <Link to="/deashbord/user">All Users </Link>
+                <Link to="/deashbord/adddoctor"> Add a doctor </Link>
+                <Link to="/deashbord/managedoctor"> Manage doctor </Link>
+              </>
+            )}
           </li>
         </ul>
       </div>
