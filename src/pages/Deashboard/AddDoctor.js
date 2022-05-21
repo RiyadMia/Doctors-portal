@@ -11,7 +11,9 @@ const AddDoctor = () => {
     reset,
   } = useForm();
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/service").then((res) => res.json())
+    fetch("https://sleepy-refuge-88548.herokuapp.com/service").then((res) =>
+      res.json()
+    )
   );
   const imageStorageKey = "dc7c980d43b37d837ac9e55bed5ddca1";
   /**
@@ -44,7 +46,7 @@ const AddDoctor = () => {
             img: img,
           };
           // send to your database
-          fetch("http://localhost:5000/doctor", {
+          fetch("https://sleepy-refuge-88548.herokuapp.com/doctor", {
             method: "POST",
             headers: {
               "content-type": "application/json",

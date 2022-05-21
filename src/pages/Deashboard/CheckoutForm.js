@@ -13,7 +13,7 @@ const CheckoutForm = ({ appoinment }) => {
   const { _id, price, patient, patientName: pastientName } = appoinment;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://sleepy-refuge-88548.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -76,7 +76,7 @@ const CheckoutForm = ({ appoinment }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(` http://localhost:5000/booking/${_id}`, {
+      fetch(`https://sleepy-refuge-88548.herokuapp.com/booking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

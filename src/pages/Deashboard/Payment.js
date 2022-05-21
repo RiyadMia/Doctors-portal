@@ -11,7 +11,7 @@ const Payment = () => {
   const stripePromise = loadStripe(
     "pk_test_51L1BneDxVxOlsrqosrgDzVGOOT4Ryed6ML5w26fljr5suZodnYo5lJrrrmF2UdfV8Rj1UmNxvUb2veceuPnCJiYy00PRcg5osF"
   );
-  const url = `http://localhost:5000/booking/${id}`;
+  const url = `https://sleepy-refuge-88548.herokuapp.com/booking/${id}`;
   const { data: appoinment, isLoading } = useQuery(["booking", id], () =>
     fetch(url, {
       method: "GET",
